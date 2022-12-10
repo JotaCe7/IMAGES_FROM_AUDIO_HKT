@@ -21,27 +21,27 @@ db = None
 model = None
 
 
-def predict(image_name):
+def model_generate(audio_name):
     """
-    Load image from the corresponding folder based on the image name
-    received, then, run our ML model to get predictions.
+    Load audio file from the corresponding folder based on the audio file name
+    received, then, run our ML model to convert it to text and generate strings.
 
     Parameters
     ----------
-    image_name : str
-        Image filename.
+    audio_name : str
+        Audio filename.
 
     Returns
     -------
-    class_name, pred_probability : tuple(str, float)
-        Model predicted class as a string and the corresponding confidence
-        score as a number.
+    text_from_audio, images_path : tuple(str, str)
+        Text generated from the audio file, 
+        path were the generated images were saved.
     """
-    class_name = None
-    pred_probability = None
+    text_from_audio = None
+    images_path = None
     # TODO
 
-    return class_name, pred_probability
+    return text_from_audio, images_path
 
 
 def main():
