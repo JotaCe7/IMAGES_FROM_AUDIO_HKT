@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 from settings import IMAGE_DIR, DURATION, WAVE_OUTPUT_FILE
 from src.sound import sound
+from src.transcript import get_text_from_audio
 # from src.model import CNN
 ##from setup_logging import setup_logging
 
@@ -83,7 +84,7 @@ def main():
             st.write("Please record sound first")
 
     if st.button('Get images from file'):
-      pass
+      text_from_audio = get_text_from_audio(WAVE_OUTPUT_FILE)
 
 
 if __name__ == '__main__':
