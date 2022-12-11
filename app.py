@@ -8,12 +8,12 @@ from PIL import Image
 from settings import IMAGE_DIR, DURATION, WAVE_OUTPUT_FILE
 from src.sound import sound
 # from src.model import CNN
-from setup_logging import setup_logging
+##from setup_logging import setup_logging
 
 from stability_sdk import client
 import stability_sdk.interfaces.gooseai.generation.generation_pb2 as generation
 
-setup_logging()
+##setup_logging()
 logger = logging.getLogger('app')
 
 def init_model():
