@@ -5,7 +5,7 @@ import numpy as np
 import librosa, librosa.display
 import matplotlib.pyplot as plt
 from PIL import Image
-from settings import IMAGE_DIR, DURATION, WAVE_OUTPUT_FILE, IMAGE_OUPUT_FILE
+from settings import RESOURCES_DIR, IMAGE_DIR, DURATION, WAVE_OUTPUT_FILE, IMAGE_OUPUT_FILE
 from src.sound import sound
 from src.transcript import get_text_from_audio
 from src.imagine import save_image_from_prompt
@@ -16,7 +16,7 @@ logger = logging.getLogger('app')
 def main():
     title = "Getting Images from Audio"
     st.title(title)
-    image = Image.open(os.path.join(IMAGE_DIR, 'furniture.jpg'))
+    image = Image.open(os.path.join(RESOURCES_DIR, 'furniture.jpg'))
     st.image(image, use_column_width=True)
 
     if st.button('Record'):

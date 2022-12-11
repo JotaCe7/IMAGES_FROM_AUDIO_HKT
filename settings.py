@@ -11,6 +11,8 @@ STABILITY_KEY = 'STABILITY_API_KEY'
 # The Root Directory of the project
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
+RESOURCES_DIR = os.path.join(ROOT_DIR, 'resources')
+
 OUT_DIR = os.path.join(ROOT_DIR, 'output/')
 RECORDING_DIR = os.path.join(OUT_DIR, 'recording')
 IMAGE_DIR = os.path.join(OUT_DIR, 'images')
