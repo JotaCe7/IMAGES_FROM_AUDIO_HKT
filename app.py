@@ -14,7 +14,7 @@ from src.imagine import save_image_from_prompt
 logger = logging.getLogger('app')
 
 def main():
-    title = "Getting Images from Audio"
+    title = "Getting Images from Audio and Text"
     st.set_page_config(page_title=title,page_icon=None, layout='centered')
     st.title(title)
     image = Image.open(os.path.join(RESOURCES_DIR, 'furniture.jpg'))
