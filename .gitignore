@@ -1,7 +1,8 @@
 # Project files/folders
 uploads
 feedback
-output/
+output/images
+output/recording
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
