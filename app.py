@@ -15,6 +15,7 @@ logger = logging.getLogger('app')
 
 def main():
     title = "Getting Images from Audio"
+    st.set_page_config(page_title=title,page_icon=None, layout='centered')
     st.title(title)
     image = Image.open(os.path.join(RESOURCES_DIR, 'furniture.jpg'))
     st.image(image, use_column_width=True)
@@ -37,7 +38,9 @@ def main():
 
     if st.button('Get images from file'):
       text_from_audio = get_text_from_audio(WAVE_OUTPUT_FILE)
+      print("$$$"+text_from_audio)
       save_image_from_prompt(text_from_audio)
+      st.subheader("Text: "+text_from_audio)
       st.write("Output Image")
       output_image=image = Image.open(IMAGE_OUPUT_FILE)
 
