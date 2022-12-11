@@ -9,39 +9,12 @@ from settings import IMAGE_DIR, DURATION, WAVE_OUTPUT_FILE
 from src.sound import sound
 from src.transcript import get_text_from_audio
 from src.imagine import save_image_from_prompt
-##from setup_logging import setup_logging
 
 ##setup_logging()
 logger = logging.getLogger('app')
 
-def init_model():
-    # cnn = CNN((128, 87))
-    # cnn.load_model()
-    # return cnn
-    pass
-
-def get_spectrogram(type='mel'):
-    logger.info("Extracting spectrogram")
-    y, sr = librosa.load(WAVE_OUTPUT_FILE, duration=DURATION)
-    ps = librosa.feature.melspectrogram(y=y, sr=sr, n_mels=128)
-    logger.info("Spectrogram Extracted")
-    format = '%+2.0f'
-    if type == 'DB':
-        ps = librosa.power_to_db(ps, ref=np.max)
-        format = ''.join[format, 'DB']
-        logger.info("Converted to DB scale")
-    return ps, format
-
-def display(spectrogram, format):
-    plt.figure(figsize=(10, 4))
-    librosa.display.specshow(spectrogram, y_axis='mel', x_axis='time')
-    plt.title('Mel-frequency spectrogram')
-    plt.colorbar(format=format)
-    plt.tight_layout()
-    st.pyplot(clear_figure=False)
-
 def main():
-    title = "Guitar Chord Recognition"
+    title = "Getting Images from Audio"
     st.title(title)
     image = Image.open(os.path.join(IMAGE_DIR, 'app_guitar.jpg'))
     st.image(image, use_column_width=True)
@@ -59,16 +32,6 @@ def main():
             st.audio(audio_bytes, format='audio/wav')
         except:
             st.write("Please record sound first")
-
-    # if st.button('Classify'):
-    #     cnn = init_model()
-    #     with st.spinner("Classifying the chord"):
-    #         chord = cnn.predict(WAVE_OUTPUT_FILE, False)
-    #     st.success("Classification completed")
-    #     st.write("### The recorded chord is **", chord + "**")
-    #     if chord == 'N/A':
-    #         st.write("Please record sound first")
-    #     st.write("\n")
 
     # Add a placeholder
     if st.button('Display Spectrogram'):
