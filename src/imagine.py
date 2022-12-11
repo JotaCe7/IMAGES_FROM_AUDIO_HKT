@@ -2,8 +2,9 @@ import os, io, warnings
 from stability_sdk import client
 import stability_sdk.interfaces.gooseai.generation.generation_pb2 as generation
 from configparser import ConfigParser
+from PIL import Image
 
-from ..settings import STABILITY_KEY
+from ..settings import STABILITY_KEY ,IMAGE_OUPUT_FILE
 
 config=ConfigParser()
 config.read("config.ini")
@@ -45,8 +46,9 @@ def save_image_from_prompt(prompt: str):
                   "Your request activated the API's safety filters and could not be processed."
                   "Please modify the prompt and try again.")
           if artifact.type == generation.ARTIFACT_IMAGE:
-              # img = Image.open(io.BytesIO(artifact.binary))
-              # display(img)
+              img = Image.open(io.BytesIO(artifact.binary))
+              img.save(IMAGE_OUPUT_FILE)
               binary_data = io.BytesIO(artifact.binary)
+              
 
               

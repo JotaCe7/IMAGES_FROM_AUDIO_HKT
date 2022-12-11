@@ -5,7 +5,7 @@ import numpy as np
 import librosa, librosa.display
 import matplotlib.pyplot as plt
 from PIL import Image
-from settings import IMAGE_DIR, DURATION, WAVE_OUTPUT_FILE
+from settings import IMAGE_DIR, DURATION, WAVE_OUTPUT_FILE, IMAGE_OUPUT_FILE
 from src.sound import sound
 from src.transcript import get_text_from_audio
 from src.imagine import save_image_from_prompt
@@ -38,6 +38,8 @@ def main():
     if st.button('Get images from file'):
       text_from_audio = get_text_from_audio(WAVE_OUTPUT_FILE)
       save_image_from_prompt(text_from_audio)
+      st.image(IMAGE_OUPUT_FILE, use_column_width=True)
+      
       #TODO: This will be consumed and diaplayed by fronted
 
 if __name__ == '__main__':
