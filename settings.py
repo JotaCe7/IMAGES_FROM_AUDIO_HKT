@@ -16,10 +16,7 @@ RECORDING_DIR = os.path.join(OUT_DIR, 'recording')
 IMAGE_DIR = os.path.join(OUT_DIR, 'images')
 
 WAVE_OUTPUT_FILE = os.path.join(RECORDING_DIR, "recorded.wav")
-
-# Features #################
-CLASSES = ['a', 'am', 'bm', 'c', 'd', 'dm', 'e', 'em', 'f', 'g']
-CLASSES_MAP = {'a':0, 'am':1, 'bm':2, 'c':3, 'd':4, 'dm':5, 'e':6, 'em':7, 'f':8, 'g':9}
+IMAGE_OUPUT_FILE = os.path.join(IMAGE_DIR, "image.jpg")
 
 # Audio configurations
 INPUT_DEVICE = 0
