@@ -16,7 +16,7 @@ logger = logging.getLogger('app')
 def main():
     title = "Getting Images from Audio"
     st.title(title)
-    image = Image.open(os.path.join(IMAGE_DIR, 'app_guitar.jpg'))
+    image = Image.open(os.path.join(IMAGE_DIR, 'furniture.jpg'))
     st.image(image, use_column_width=True)
 
     if st.button('Record'):
@@ -33,15 +33,7 @@ def main():
         except:
             st.write("Please record sound first")
 
-    # Add a placeholder
-    if st.button('Display Spectrogram'):
-        # type = st.radio("Scale of spectrogram:",
-        #                 ('mel', 'DB'))
-        if os.path.exists(WAVE_OUTPUT_FILE):
-            spectrogram, format = get_spectrogram(type='mel')
-            display(spectrogram, format)
-        else:
-            st.write("Please record sound first")
+
 
     if st.button('Get images from file'):
       text_from_audio = get_text_from_audio(WAVE_OUTPUT_FILE)
