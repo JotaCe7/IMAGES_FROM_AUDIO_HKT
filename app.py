@@ -8,11 +8,8 @@ from PIL import Image
 from settings import IMAGE_DIR, DURATION, WAVE_OUTPUT_FILE
 from src.sound import sound
 from src.transcript import get_text_from_audio
-# from src.model import CNN
+from src.imagine import save_image_from_prompt
 ##from setup_logging import setup_logging
-
-from stability_sdk import client
-import stability_sdk.interfaces.gooseai.generation.generation_pb2 as generation
 
 ##setup_logging()
 logger = logging.getLogger('app')
@@ -85,12 +82,8 @@ def main():
 
     if st.button('Get images from file'):
       text_from_audio = get_text_from_audio(WAVE_OUTPUT_FILE)
-
+      save_image_from_prompt(text_from_audio)
+      #TODO: This will be consumed and diaplayed by fronted
 
 if __name__ == '__main__':
     main()
-    # for i in range(100):
-    #   # Update the progress bar with each iteration.
-    #   latest_iteration.text(f'Iteration {i+1}')
-    #   bar.progress(i + 1)
-    #   time.sleep(0.1)
