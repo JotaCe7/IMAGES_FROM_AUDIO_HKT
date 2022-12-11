@@ -59,7 +59,7 @@ def get_transcript(transcript_id:str):
   """
   status = 'processing'
   while status=='processing':
-    endpoint = TRASCRIPT_ENDPOINT + transcript_id
+    endpoint = TRASCRIPT_ENDPOINT + '/'+ transcript_id
     headers = {
         "authorization": AUTHORIZATION_KEY,
     }
