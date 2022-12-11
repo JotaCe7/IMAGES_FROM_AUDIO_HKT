@@ -6,7 +6,7 @@ TRASCRIPT_ENDPOINT = "https://api.assemblyai.com/v2/transcript"
 AUTHORIZATION_KEY = 'SECRET_CODE'
 
 # Stability API
-STABILITY_KEY = 'YOUR_STABILITY_KEY_GOES_HERE'
+STABILITY_KEY = 'STABILITY_API_KEY'
 
 # The Root Directory of the project
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -17,6 +17,7 @@ IMAGE_DIR = os.path.join(OUT_DIR, 'images')
 
 WAVE_OUTPUT_FILE = os.path.join(RECORDING_DIR, "recorded.wav")
 IMAGE_OUPUT_FILE = os.path.join(IMAGE_DIR, "image.jpg")
+CONGIF_FILE = os.path.join(ROOT_DIR,'src/config.ini')
 
 # Audio configurations
 INPUT_DEVICE = 0
