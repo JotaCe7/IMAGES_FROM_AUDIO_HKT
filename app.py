@@ -38,7 +38,10 @@ def main():
     if st.button('Get images from file'):
       text_from_audio = get_text_from_audio(WAVE_OUTPUT_FILE)
       save_image_from_prompt(text_from_audio)
-      st.image(IMAGE_OUPUT_FILE, use_column_width=True)
+      st.write("Output Image")
+      output_image=image = Image.open(IMAGE_OUPUT_FILE)
+
+      st.image(output_image, use_column_width=True)
       
       #TODO: This will be consumed and diaplayed by fronted
 

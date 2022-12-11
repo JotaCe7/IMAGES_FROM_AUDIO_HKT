@@ -4,10 +4,10 @@ import stability_sdk.interfaces.gooseai.generation.generation_pb2 as generation
 from configparser import ConfigParser
 from PIL import Image
 
-from ..settings import STABILITY_KEY ,IMAGE_OUPUT_FILE
+from settings import STABILITY_KEY ,IMAGE_OUPUT_FILE,CONGIF_FILE
 
 config=ConfigParser()
-config.read("config.ini")
+config.read(CONGIF_FILE)
 config_stability=config['Stability']
 
 
