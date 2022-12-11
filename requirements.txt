@@ -1,0 +1,6 @@
+streamlit=1.15.2
+librosa=0.9.2
+matplotlib=3.6.2
+stability-sdk=0.3.0
+#pyaudio # install with conda (v. 0.2.11)
+# pyyaml # install with conda (v. unk)
