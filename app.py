@@ -1,9 +1,6 @@
-import time, os, getpass
+import  os
 import logging
 import streamlit as st
-import numpy as np
-import librosa, librosa.display
-import matplotlib.pyplot as plt
 from PIL import Image
 from settings import RESOURCES_DIR, IMAGE_DIR, DURATION, WAVE_OUTPUT_FILE, IMAGE_OUPUT_FILE
 from src.sound import sound
