@@ -2,5 +2,7 @@ name: streamlit-conda-minimal
 channels:
   - conda-forge
 dependencies:
-  - pyaudio
+  - pyaudio==0.2.11
   - pyyaml
+  - streamlit==1.15.2
+  - stability-sdk==0.3.0
