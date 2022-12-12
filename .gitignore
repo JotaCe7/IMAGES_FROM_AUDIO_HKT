@@ -3,6 +3,7 @@ uploads
 feedback
 output/images
 output/recording
+.streamlit
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
