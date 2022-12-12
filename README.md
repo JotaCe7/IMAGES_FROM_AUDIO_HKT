@@ -35,6 +35,9 @@ streamlit run app.py
 
 4. Record a 10-second audio clip and see the generated image
 
+## Contributing
+
+If you want to contribute to this project, please fork the repository and make your changes in a separate branch. Once you are ready to submit your changes, open a pull request and we will review your changes.
 
 ## License
 This project is licensed under the terms of the MIT license. See the LICENSE file for more information.
