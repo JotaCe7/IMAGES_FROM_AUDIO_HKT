@@ -1,6 +1,9 @@
 import requests
 from  utils.utils import read_file
-from settings import WAVE_OUTPUT_FILE, UPLOAD_ENDPOINT, TRASCRIPT_ENDPOINT, AUTHORIZATION_KEY
+from settings import WAVE_OUTPUT_FILE, UPLOAD_ENDPOINT, TRASCRIPT_ENDPOINT, ASSEMBLY_KEY
+import streamlit as st
+
+assembly_key = st.secrets[ASSEMBLY_KEY]
 
 def upload_audio_file(filename:str = WAVE_OUTPUT_FILE):
   '''
@@ -14,7 +17,7 @@ def upload_audio_file(filename:str = WAVE_OUTPUT_FILE):
   ------
       string: url where audio file is stored in the cloud 
   '''
-  headers = {'authorization': AUTHORIZATION_KEY}
+  headers = {'authorization': assembly_key}
   upload_response = requests.post(UPLOAD_ENDPOINT,
                           headers=headers,
                           data=read_file(filename))
@@ -35,7 +38,7 @@ def do_transcript(audio_url: str):
   """
   json = { "audio_url": "https://cdn.assemblyai.com/upload/" + audio_url }
   headers = {
-      "authorization": AUTHORIZATION_KEY,
+      "authorization": assembly_key,
       "content-type": "application/json"
   }
   transcript_response = requests.post(TRASCRIPT_ENDPOINT,
@@ -61,7 +64,7 @@ def get_transcript(transcript_id:str):
   while status=='processing':
     endpoint = TRASCRIPT_ENDPOINT + '/'+ transcript_id
     headers = {
-        "authorization": AUTHORIZATION_KEY,
+        "authorization": assembly_key,
     }
     response = requests.get(endpoint, headers=headers)
     status = response.json()['status']

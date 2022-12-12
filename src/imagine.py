@@ -3,19 +3,17 @@ from stability_sdk import client
 import stability_sdk.interfaces.gooseai.generation.generation_pb2 as generation
 from configparser import ConfigParser
 from PIL import Image
+import streamlit as st
 
 from settings import STABILITY_KEY ,IMAGE_OUPUT_FILE,CONGIF_FILE
 
 config=ConfigParser()
 config.read(CONGIF_FILE)
 config_stability=config['Stability']
-
-
-os.environ['STABILITY_HOST'] = 'grpc.stability.ai:443'
-os.environ['STABILITY_KEY'] = STABILITY_KEY
+stability_key = st.secrets[STABILITY_KEY]
 
 stability_api = client.StabilityInference(
-    key=STABILITY_KEY, # API Key reference.
+    key=stability_key, # API Key reference.
     verbose=True, # Print debug messages.
     engine="stable-diffusion-v1-5", # Set the engine to use for generation. 
 )
