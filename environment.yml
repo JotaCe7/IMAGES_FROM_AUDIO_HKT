@@ -2,10 +2,9 @@ name: streamlit-conda-minimal
 channels:
   - conda-forge
 dependencies:
-  - protobuf==3.19.5
   - pyaudio==0.2.11
   - pyyaml
   - pip
   - pip:
     - streamlit==1.15.2
-    - stability-sdk==0.3.0
+    - stability-sdk
