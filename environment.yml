@@ -4,9 +4,7 @@ channels:
 dependencies:
   - pyaudio==0.2.11
   - pyyaml
-  - pip
   - pip:
-    - pip uninstall protobuf
     - protobuf==3.19.5
     - stability-sdk==0.3.0
     - streamlit==1.15.2
