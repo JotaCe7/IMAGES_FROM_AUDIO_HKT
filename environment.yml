@@ -6,5 +6,6 @@ dependencies:
   - pyyaml
   - pip
   - pip:
+    - -I protobuf==3.19.5
     - streamlit==1.15.2
-    - stability-sdk
+    - stability-sdk==0.3.0
