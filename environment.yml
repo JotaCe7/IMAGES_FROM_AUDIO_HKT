@@ -4,5 +4,7 @@ channels:
 dependencies:
   - pyaudio==0.2.11
   - pyyaml
-  - streamlit==1.15.2
-  - stability-sdk==0.3.0
+  - pip
+  - pip:
+    - streamlit==1.15.2
+    - stability-sdk==0.3.0
